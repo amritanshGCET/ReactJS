@@ -4,12 +4,18 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Header from './components/header.jsx' //you can import your custom components
-function App() {
+function App(props) {
+  
   const [count, setCount] = useState(0)
-
+  let arr=['Batman','superman','spiderman'];
+  let myObj={
+    Name:'Amritansh Singh',
+    Class:'ECE-A1',
+    College:'Galgotia College',
+  }
   return (
     <>
-    <Header/>
+    <Header randomArr={arr} object={myObj}/>
     <div className='flex flex-col items-center justify-center p-50'>
      <h1 className='bg-green-600 text-black p-10 rounded-2xl ' >hello ji kaise ho</h1>
      <h2 className='bg-green-900 p-4 rounded-3xl'>Tailwind css test</h2>

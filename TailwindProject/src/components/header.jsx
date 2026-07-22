@@ -1,10 +1,11 @@
 import React from 'react'
 
-function Header() {
+function Header(props) { //by defining props in the function you can transfer data in components
+  console.log(props);
     return (
         <>
 <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
-<header class="bg-gray-900">
+<header className="bg-gray-900">
   <nav aria-label="Global" class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
     <div class="flex lg:flex-1">
       <a href="#" class="-m-1.5 p-1.5">
