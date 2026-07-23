@@ -4,7 +4,7 @@ function App() {
   const inc = () => {
     count = count + 1;
     if(count>20){
-      count=20;
+      count=20;      
     }
     setCount(count); //useState always returns two values one is number and a function
   };
