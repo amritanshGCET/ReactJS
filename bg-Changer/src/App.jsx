@@ -13,15 +13,15 @@ console.log("Button was clicked"); //we can also create components of button
     
     <div className='h-screen w-full flex items-center justify-center' style={{backgroundColor:color}}>
       <div className='flex flex-row justify-around bg-gray-800 gap-4 p-1 absolute top-5 rounded-2xl'>
-    <button onClick={()=>{setColor("red")}} className='bg-red-500 p-1 rounded-2xl  text-black' >Red</button>
-    <button onClick={()=>setColor("blue")} className='bg-blue-400 p-1 rounded-2xl text-black' >Blue</button> 
-    <button onClick={()=>setColor("Green")} className='bg-green-400 p-1 rounded-2xl text-black' >Green</button>
-    <button onClick={()=>setColor("Yellow")} className='bg-yellow-300 p-1 rounded-2xl text-black' >Yellow</button> 
-    <button onClick={()=>setColor("Lavender")} className='bg-purple-300 p-1 rounded-2xl text-black' >Lavender</button>
-    <button onClick={()=>setColor("pink")} className='bg-pink-400 p-1 rounded-2xl text-black' >pink</button>
-    <button onClick={()=>setColor("yellow")} className='bg-amber-300 p-1 rounded-2xl text-black' >amber</button> 
-    <button onClick={()=>setColor("purple")} className='bg-purple-500 p-1 rounded-2xl text-black' >purple</button>
-    <button onClick={()=>setColor("teal")} className='bg-teal-500 p-1 rounded-2xl text-black' >teal</button>
+    <button onClick={()=>{setColor("red")}} className='bg-red-500 p-1 rounded-2xl  text-black  px-1 py-2' >Red</button>
+    <button onClick={()=>setColor("blue")} className='bg-blue-400 p-1 rounded-2xl text-black px-1 py-2' >Blue</button> 
+    <button onClick={()=>setColor("Green")} className='bg-green-400 p-1 rounded-2xl text-black px-1 py-2' >Green</button>
+    <button onClick={()=>setColor("Yellow")} className='bg-yellow-300 p-1 rounded-2xl text-black px-1 py-2' >Yellow</button> 
+    <button onClick={()=>setColor("Lavender")} className='bg-purple-300 p-1 rounded-2xl text-black px-1 py-2' >Lavender</button>
+    <button onClick={()=>setColor("pink")} className='bg-pink-400 p-1 rounded-2xl text-black px-1 py-2' >pink</button>
+    <button onClick={()=>setColor("yellow")} className='bg-amber-300 p-1 rounded-2xl text-black px-1 py-2' >amber</button> 
+    <button onClick={()=>setColor("purple")} className='bg-purple-500 p-1 rounded-2xl text-black px-1 py-2' >purple</button>
+    <button onClick={()=>setColor("teal")} className='bg-teal-500 p-1 rounded-2xl text-black px-1 py-2' >teal</button>
     </div>
     </div>  
   
