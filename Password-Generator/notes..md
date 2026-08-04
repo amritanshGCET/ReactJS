@@ -8,3 +8,6 @@ How it works: It returns an object with a single property: .current. You can rea
 What it does: It caches (memoizes) a function definition between renders. In React, every time a component re-renders, all the functions inside it are recreated. Usually, this is fine, but if you are passing a function down as a prop to a highly optimized child component, recreating the function will cause the child to re-render unnecessarily.
 
 How it works: Like useEffect, it takes a function and a dependency array. It will only recreate the function if one of the dependencies changes.
+
+for more info:-[Claude chat link](https://claude.ai/share/991fc9aa-50c6-4c73-8b40-e3f51a3b4fb8)
+ 
