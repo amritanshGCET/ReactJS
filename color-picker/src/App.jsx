@@ -14,10 +14,10 @@ function App() {
       <div style={{backgroundColor:color,height:100 ,width:100}}></div>
       <p>Selected color {color}</p>
       <label>Select a color: </label>
-        <input type='color' onChange={(e)=>setColor(event.target.value)}/>
+        <input type='color' value={color} onChange={(e)=>setColor(event.target.value)}/>
      </div>
     </>
-  )
+  ) 
 }
 
 export default App
