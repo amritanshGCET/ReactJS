@@ -5,15 +5,15 @@ import heroImg from './assets/hero.png'
 import Header from './components/Header/header'
 import Footer from './components/Footer/footer'
 import Home from './components/home/home'
-
+import { Outlet } from 'react-router-dom'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
      <Header />
-     <Footer />
-     <Home />
+      <Outlet />
+     <Footer />  
     </>
   )
 }
