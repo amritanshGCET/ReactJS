@@ -1,15 +1,14 @@
-import { useState } from 'react'
-
-
+import LogIn from './components/logIn'
+import Profile from './components/profile'
+import ContextProvider from './context/contextProvider'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-   <contextProvider>
-   <h1>Hello</h1>
-   </contextProvider>
-  
+   <ContextProvider>
+     <h1>Hello</h1>
+     <LogIn />
+     <Profile />
+   </ContextProvider>
   )
 }
 
