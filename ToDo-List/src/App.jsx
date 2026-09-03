@@ -1,16 +1,13 @@
-import { useState } from 'react'
-import Header from '../../react-router/src/components/Header/header'
+import Header from './components/header'
 import Footer from './components/footer'
-
+import { Outlet } from 'react-router-dom'
 
 function App() {
-  const [taskContainer, setCount] = useState([""])
-
   return (
     <>
-  <Header  />
-  <Outlet />
-  <Footer />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   )
 }
