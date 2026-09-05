@@ -2,16 +2,23 @@ import { useState } from "react";
 import Card from "./card";
 function Home() {
     const [tasks, setTasks] = useState([]);
-    const [newObj,setNewObj]=useState({titleTask:"",des:""});
-   const handleTitleChange = (e) =>
-    setNewObj({ ...newObj, titleTask: e.target.value });
+    const [newObj, setNewObj] = useState({ titleTask: "", des: "" });
+    const [isEmpty,setIsEmpty]= useState(true);
+    const handleTitleChange = (e) =>
+        setNewObj({ ...newObj, titleTask: e.target.value });
 
-  const handleDesChange = (e) =>
-    setNewObj({ ...newObj, des: e.target.value });
+    const handleDesChange = (e) =>
+        setNewObj({ ...newObj, des: e.target.value });
 
-    const handleAddTasks=()=>{
-        setTasks([...tasks,newObj])
-         setNewObj({ titleTask: "", des: "" }); 
+    const handleAddTasks = () => {
+        if(newObj.titleTask.length === 0){
+            setIsEmpty(false)
+        }
+        else{
+        setTasks([...tasks, newObj])
+        setNewObj({ titleTask: "", des: "" })
+        setIsEmpty(true)
+        }
     }
     return (
         <>
@@ -22,8 +29,9 @@ function Home() {
                         <p className="text-sm text-slate-500">
                             Fill in the details below to create a new task
                         </p>
-                    </div>
-
+                    </div>  
+                    {isEmpty ? (
+                        <p></p>):(<p className="text-red-400">You have not entered task title</p>)}
                     <div className="mb-4">
                         <label className="block text-sm font-medium text-slate-700 mb-1.5">
                             Title
@@ -48,7 +56,10 @@ function Home() {
                         />
                     </div>
 
-                    <button onClick={handleAddTasks} className="mt-4 w-full sm:w-auto px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition">
+                    <button
+                    onClick={handleAddTasks}
+                        className="mt-4 w-full sm:w-auto px-5 py-2 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition"
+                    >
                         Add Task
                     </button>
                 </div>
@@ -60,7 +71,7 @@ function Home() {
                         <p className="text-slate-400 text-sm italic">No tasks added yet.</p>
                     ) : (
                         <ul className="space-y-3">
-                            {tasks.map((element,index)=><Card tasks={tasks}/>)}
+                            {tasks.map((element, index) => <Card task={element} index={index} />)}
                         </ul>
                     )}
                 </div>
