@@ -1,7 +1,10 @@
 import { useState } from "react"
 function Card(props) {
   const [completeTask, setcompleteTask] = useState(false);
-  return (
+  const [remove,setRemove]=useState(false);
+  const today = new Date();
+  if(!remove){
+      return (
     <>
       <div class="w-full bg-white rounded-2xl shadow-lg border border-blue-100 p-6">
 
@@ -28,7 +31,7 @@ function Card(props) {
           </div>
 
 
-          <button class="shrink-0 text-gray-300 hover:text-blue-400 transition-colors">
+          <button class="shrink-0 text-gray-300 hover:text-blue-400 transition-colors" onClick={()=>{setRemove(!remove)}}>
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M6 18L18 6" />
             </svg>
@@ -41,13 +44,20 @@ function Card(props) {
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
-            Due Sep 12
+            {today.toLocaleDateString('en-GB')}
           </span>
         </div>
 
       </div>
     </>
   )
+}
+else{
+  return (
+  <>
+  </>
+  )
+}
 }
 
 export default Card

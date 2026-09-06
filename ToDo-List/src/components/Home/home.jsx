@@ -38,6 +38,7 @@ function Home() {
                         </label>
                         <input
                             type="text"
+                            value={newObj.titleTask}
                             onChange={handleTitleChange}
                             placeholder="e.g. Finish project report"
                             className="w-full px-3 py-2 rounded-lg border border-slate-300 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition"
@@ -50,6 +51,7 @@ function Home() {
                         </label>
                         <input
                             type="text"
+                            value={newObj.des}
                             onChange={handleDesChange}
                             placeholder="Add more details about this task"
                             className="w-full px-3 py-2 rounded-lg border border-slate-300 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition"
