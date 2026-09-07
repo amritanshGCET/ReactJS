@@ -18,7 +18,7 @@ function Header() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="" className={({ isActive }) =>
+            <NavLink to="/Github" className={({ isActive }) =>
                 `block py-2 pr-4 pl-3 duration-200 border-b ${isActive ? "text-orange-300" : "text-gray-200"} border-blue-600 lg:border-0 hover:text-gray-500 lg:p-0`
               }>
               GitHub data
