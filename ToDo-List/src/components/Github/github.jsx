@@ -1,30 +1,39 @@
-import React from 'react'
+import React, { useState,useRef } from 'react'
 
 function Github() {
+    const[req,setReq]=useState(false);
+    const[isEmpty,setIsEmpty]=useState(false);
+    const inputRef=useRef(null)
+    const handleClick=()=>{
+      const textValue = inputRef.current.value
+      if(textValue.length===0){
+        setIsEmpty(true)
+      }
+
+    }
     return (
        <div className="min-h-screen bg-stone-100 px-6 py-16 font-serif text-stone-900">
   <div className="mx-auto max-w-xl">
 
     {/* Hero / search */}
     <section className="mb-12">
-      <h1 className="mb-2 max-w-xs text-3xl font-semibold leading-snug">
+      <h1 className="mb-2 text-center text-3xl font-semibold leading-snug">
         Find anyone on GitHub
       </h1>
-      <p className="mb-7 max-w-md text-base leading-relaxed text-stone-500">
+      <p className="mb-7 text-center text-base leading-relaxed text-stone-500">
         Enter a username to pull up their profile, stats, and pinned work.
       </p>
-
-      <div className="flex overflow-hidden rounded-md border border-stone-300 bg-white">
-        <span className="flex items-center whitespace-nowrap pl-4 pr-1 font-mono text-sm text-stone-400">
-          github.com/
-        </span>
+      <div>{isEmpty ? (<p className="text-red-500">*You cannot fill blank username*</p>):(<p></p>)}</div>
+      <div className="flex overflow-hidden rounded-md border border-stone-300 bg-white shadow-sm">
         <input
           type="text"
-          readOnly
+          aria-label="GitHub username"
           placeholder="octocat"
-          className="flex-1 border-none bg-transparent px-1 py-3.5 font-mono text-sm text-stone-900 outline-none placeholder:text-stone-400"
+          className="min-w-0 flex-1 border-none bg-transparent px-4 py-3.5 font-mono text-sm text-stone-900 outline-none placeholder:text-stone-400"
+          ref={inputRef}
+           onChange={() => setIsEmpty(false)}
         />
-        <button className="bg-stone-900 px-6 text-sm font-medium text-white">
+        <button className="cursor-pointer bg-teal-700 px-6 text-sm font-medium text-white hover:bg-teal-800" onClick={handleClick}>
           Look up
         </button>
       </div>
@@ -86,7 +95,7 @@ function Github() {
             <span className="h-2 w-2 rounded-full bg-teal-600" />
             Shell
           </span>
-          <span className="text-amber-600">★ 214</span>
+          <span className="text-teal-700">★ 214</span>
         </div>
       </div>
 
@@ -102,7 +111,7 @@ function Github() {
             <span className="h-2 w-2 rounded-full bg-amber-500" />
             HTML
           </span>
-          <span className="text-amber-600">★ 12.8k</span>
+          <span className="text-teal-700">★ 12.8k</span>
         </div>
       </div>
 
@@ -118,7 +127,7 @@ function Github() {
             <span className="h-2 w-2 rounded-full bg-emerald-500" />
             Lua
           </span>
-          <span className="text-amber-600">★ 3.4k</span>
+          <span className="text-teal-700">★ 3.4k</span>
         </div>
       </div>
 
@@ -134,7 +143,7 @@ function Github() {
             <span className="h-2 w-2 rounded-full bg-indigo-400" />
             JavaScript
           </span>
-          <span className="text-amber-600">★ 6.1k</span>
+          <span className="text-teal-700">★ 6.1k</span>
         </div>
       </div>
 
